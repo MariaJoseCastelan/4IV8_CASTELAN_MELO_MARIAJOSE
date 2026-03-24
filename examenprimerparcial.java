@@ -5,6 +5,9 @@ public static void main (String[] args){
 Scanner sc = new Scanner(System.in);
 System.out.println("Menu del programa");
     System.out.println("Eliga una opcion del 1 al 3");
+    System.out.println("1. Datos personales");
+    System.out.println("2. Calculo de volumen");
+    System.out.println("3. Salir");
 
     int opcion = sc.nextInt();
 
@@ -24,7 +27,7 @@ System.out.println("Menu del programa");
 
             System.out.println("Escriba su fecha de nacimiento (todo con letras): ");
             String fechanacimiento = sc.nextLine();
-            break;
+                break;
 
         case 2:
             System.out.println("Eliga una figura geometrica:");
