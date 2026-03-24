@@ -26,8 +26,39 @@ System.out.println("Menu del programa");
             String fechanacimiento = sc.nextLine();
             break;
 
-            case 2:
-            System.out.println();
+        case 2:
+            System.out.println("Eliga una figura geometrica:");
+            System.out.println("1. Prisma");
+            System.out.println("2. Piramide");
+            int figura = sc.nextInt();
+
+                switch (figura) {
+                    case 1:
+                        System.out.println("Escriba el area de la base: ");
+                        double areabase = sc.nextDouble();
+    
+                        System.out.println("Escriba la altura del prisma: ");
+                        double alturaprism = sc.nextDouble();
+    
+                        double volumenprisma = areabase * alturaprism;
+                        System.out.println("El volumen del prisma es: " + volumenprisma);
+                        break;
+    
+                    case 2:
+                        System.out.println("Escriba el area de la base: ");
+                        double areabasep = sc.nextDouble();
+    
+                        System.out.println("Escriba la altura de la piramide: ");
+                        double alturapiramide = sc.nextDouble();
+    
+                        double volumenpiramide = (areabasep * alturapiramide) / 3;
+                        System.out.println("El volumen de la piramide es: " + volumenpiramide);
+                        break;
+    
+                    default:
+                        throw new AssertionError();
+                }
+                break;
          default:
              throw new AssertionError();
      }
