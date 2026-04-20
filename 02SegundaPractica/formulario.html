@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/stylepractica2.css">
+    <script src="./JS/validarformulario.js"></script>
+</head>
+<body>
+    <div class="container">
+        <p>Todos los formularios que estan en internet tienen metodos de programacion por defecto. Estos  metodos nos sirven para poder haer las acciones principales como son:
+            Acciones para poderse conectar con los servideros, a traves de las arquitecturas Cliente Servidor.
+            Esque vamos a tener que por defecto de todos los formularios utilizaran el metodo GET y le segundo metodo mas utilizado sera es POST, aunque existen otros metodos que se encarga del intercambio de informacion
+            Get este metdo envia por medio de la url toda la informacion del formulario a traves del navegador su funcion principal es obtener los datos del servicio pero es el metodo mas vulnerable de todos ya que se puede generar inyecciones de codigo
+            POST este metodo se encarga de registrar una nueva entrada al sistema tambien utiliza la url como envio por defecto pero su facultad es poder ocultarla esto significa que los datos no son visibles para el usuario comun en el navegador.
+            <form action="formulario.html" method="POST" id="formulario" onsubmit="return validarformulario(this);">
+                <label for="Nombre">
+                Nombre:
+                </label>
+                <br>
+                <input type="text" name="Nombre"
+                id="Nombre" placeholder="porfavor escribe tu nombre">
+                <br>
+                <label for="edad">
+                Edad:
+                </label>
+                <br>
+                <input type="number" name="edad" id="edad" placeholder="Escribe tu edad">
+                <br>
+                <label for="gmail">
+                Gmail:
+                </label>
+                <br>
+                <input type="email" name="gmail" id="gmail" placeholder="Escribe tu gmail">
+                <input type="submit" name ="enviar" id="enviar" value="Enviar registro">
+                <br>
+                <input type="reset" name="borrar" id="borrar" value="Borrar registro">
+            </form>
+        </p>
+    </div>
+</body>
+</html>
