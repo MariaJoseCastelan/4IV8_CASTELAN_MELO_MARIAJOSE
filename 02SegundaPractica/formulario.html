@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/stylepractica2.css">
-    <script src="./JS/validarformulario.js"></script>
+    <script src="./JS/validarformulario.js" defer></script>
 </head>
 <body>
     <div class="container">
@@ -13,7 +13,7 @@
             Acciones para poderse conectar con los servideros, a traves de las arquitecturas Cliente Servidor.
             Esque vamos a tener que por defecto de todos los formularios utilizaran el metodo GET y le segundo metodo mas utilizado sera es POST, aunque existen otros metodos que se encarga del intercambio de informacion
             Get este metdo envia por medio de la url toda la informacion del formulario a traves del navegador su funcion principal es obtener los datos del servicio pero es el metodo mas vulnerable de todos ya que se puede generar inyecciones de codigo
-            POST este metodo se encarga de registrar una nueva entrada al sistema tambien utiliza la url como envio por defecto pero su facultad es poder ocultarla esto significa que los datos no son visibles para el usuario comun en el navegador.
+            POST este metodo se encarga de registrar una nueva entrada al sistema tambien utiliza la url como envio por defecto pero su facultad es poder ocultarla esto significa que los datos no son visibles para el usuario comun en el navegador.</p>
             <form action="formulario.html" method="POST" id="formulario" onsubmit="return validarformulario(this);">
                 <label for="Nombre">
                 Nombre:
@@ -37,7 +37,6 @@
                 <br>
                 <input type="reset" name="borrar" id="borrar" value="Borrar registro">
             </form>
-        </p>
     </div>
 </body>
 </html>
