@@ -1,5 +1,8 @@
 
 import java.util.Scanner;
+public class examen1parcial {
+
+    
 
 public static void main (String[] args){
 Scanner sc = new Scanner(System.in);
@@ -27,7 +30,11 @@ System.out.println("Menu del programa");
 
             System.out.println("Escriba su fecha de nacimiento (todo con letras): ");
             String fechanacimiento = sc.nextLine();
-                break;
+            
+                System.out.println("--- Tus datos ---");
+                 System.out.println("Nombre completo: " + nombre + " " + apellidop + " " + apellidom);
+                System.out.println("Fecha de nacimiento: " + fechanacimiento);
+    break;
 
         case 2:
             System.out.println("Eliga una figura geometrica:");
@@ -70,3 +77,4 @@ System.out.println("Menu del programa");
 
 
 } 
+}
