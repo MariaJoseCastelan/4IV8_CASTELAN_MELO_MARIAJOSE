@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Jost:wght@300;400;500&display=swap');
+
+/* =====================
+   VARIABLES DE COLOR
+   ===================== */
+:root {
+    --verde-claro:    #DDFCAD;
+    --verde-medio:    #C8E087;
+    --verde-oliva:    #95A472;
+    --cafe-verdoso:   #82846D;
+    --gris-oscuro:    #646165;
+}
+
+/* =====================
+   RESET & BASE
+   ===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--verde-claro);
+    background-image:
+        radial-gradient(circle at 10% 20%, rgba(200, 224, 135, 0.5) 0%, transparent 50%),
+        radial-gradient(circle at 90% 80%, rgba(149, 164, 114, 0.3) 0%, transparent 50%);
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    color: var(--gris-oscuro);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px;
+}
+
+/* =====================
+   CONTENEDOR PRINCIPAL
+   ===================== */
+.container {
+    width: 100%;
+    max-width: 720px;
+    animation: fadeInUp 0.7s ease both;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* =====================
+   TEXTO INTRODUCTORIO
+   ===================== */
+.container > p {
+    background-color: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(8px);
+    border-left: 4px solid var(--verde-oliva);
+    border-radius: 0 16px 16px 0;
+    padding: 24px 28px;
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: var(--cafe-verdoso);
+    margin-bottom: 32px;
+    box-shadow: 0 4px 20px rgba(130, 132, 109, 0.12);
+}
+
+/* =====================
+   TARJETA DEL FORMULARIO
+   ===================== */
+form {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(200, 224, 135, 0.6);
+    border-radius: 24px;
+    padding: 48px 44px;
+    box-shadow:
+        0 8px 32px rgba(100, 97, 101, 0.12),
+        0 2px 8px rgba(149, 164, 114, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decoración de fondo en la tarjeta */
+form::before {
+    content: '';
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(200, 224, 135, 0.4), transparent 70%);
+    pointer-events: none;
+}
+
+form::after {
+    content: '✦ Registro';
+    position: absolute;
+    top: 24px;
+    left: 44px;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--verde-oliva);
+    opacity: 0.7;
+}
+
+/* Título elegante del formulario */
+form .form-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--gris-oscuro);
+    margin-bottom: 32px;
+    margin-top: 20px;
+    padding-top: 12px;
+}
+
+/* =====================
+   GRUPOS DE CAMPO
+   ===================== */
+.field-group {
+    margin-bottom: 24px;
+    position: relative;
+}
+
+/* =====================
+   LABELS
+   ===================== */
+label {
+    display: block;
+    font-family: 'Jost', sans-serif;
+    font-weight: 500;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--cafe-verdoso);
+    margin-bottom: 8px;
+    transition: color 0.2s;
+}
+
+/* =====================
+   INPUTS
+   ===================== */
+input[type="text"],
+input[type="number"],
+input[type="email"] {
+    width: 100%;
+    padding: 14px 18px;
+    background: rgba(221, 252, 173, 0.25);
+    border: 1.5px solid rgba(149, 164, 114, 0.4);
+    border-radius: 12px;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: var(--gris-oscuro);
+    outline: none;
+    transition: all 0.25s ease;
+    margin-bottom: 0;
+}
+
+input[type="text"]::placeholder,
+input[type="number"]::placeholder,
+input[type="email"]::placeholder {
+    color: rgba(130, 132, 109, 0.5);
+    font-style: italic;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus {
+    border-color: var(--verde-oliva);
+    background: rgba(221, 252, 173, 0.45);
+    box-shadow: 0 0 0 4px rgba(149, 164, 114, 0.15);
+    transform: translateY(-1px);
+}
+
+/* =====================
+   SEPARADOR VISUAL
+   ===================== */
+.divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--verde-medio), transparent);
+    margin: 28px 0;
+}
+
+/* =====================
+   BOTONES
+   ===================== */
+.btn-group {
+    display: flex;
+    gap: 14px;
+    margin-top: 32px;
+}
+
+input[type="submit"] {
+    flex: 1;
+    padding: 15px 24px;
+    background: linear-gradient(135deg, var(--verde-oliva), var(--cafe-verdoso));
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 14px rgba(149, 164, 114, 0.4);
+}
+
+input[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(149, 164, 114, 0.5);
+    background: linear-gradient(135deg, var(--cafe-verdoso), var(--gris-oscuro));
+}
+
+input[type="submit"]:active {
+    transform: translateY(0px);
+}
+
+input[type="reset"] {
+    padding: 15px 24px;
+    background: transparent;
+    color: var(--cafe-verdoso);
+    border: 1.5px solid rgba(130, 132, 109, 0.4);
+    border-radius: 12px;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+input[type="reset"]:hover {
+    background: rgba(130, 132, 109, 0.08);
+    border-color: var(--cafe-verdoso);
+    transform: translateY(-1px);
+}
+
+/* =====================
+   RESPONSIVO
+   ===================== */
+@media (max-width: 520px) {
+    form {
+        padding: 36px 24px;
+    }
+    .btn-group {
+        flex-direction: column;
+    }
+}
