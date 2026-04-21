@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ejercicio 03 - Descuento en Tienda</title>
+  <link rel="stylesheet" href="style03.css" />
+</head>
+<body>
+
+  <div class="tarjeta">
+
+    <div class="encabezado">
+      <h1>Descuento en Tienda</h1>
+      <p>Calcula cuánto pagarás con el 15% de descuento</p>
+    </div>
+
+    <div class="grupo-campo">
+      <label for="total">Total de la compra ($1 - $50,000)</label>
+      <input type="text" id="total" placeholder="Ejemplo: 1200" maxlength="10" />
+      <span class="mensaje-error" id="error-total"></span>
+    </div>
+
+    <button class="btn-calcular" onclick="calcular()">Calcular descuento</button>
+    <button class="btn-limpiar" onclick="limpiar()">Limpiar</button>
+
+    <div class="resultado" id="resultado" style="display: none;">
+      <h2>Resultados</h2>
+
+      <div class="fila-resultado">
+        <span class="etiqueta">Total de la compra</span>
+        <span class="valor" id="res-total"></span>
+      </div>
+
+      <div class="fila-resultado">
+        <span class="etiqueta">Descuento (15%)</span>
+        <span class="valor" id="res-descuento"></span>
+      </div>
+
+      <div class="fila-resultado total">
+        <span class="etiqueta"> Total a pagar</span>
+        <span class="valor" id="res-pagar"></span>
+      </div>
+    </div>
+
+    <p class="nota">* Se aplica un descuento fijo del 15% sobre el total de la compra.</p>
+
+  </div>
+
+  <script src="validaciones03.js"></script>
+
+</body>
+</html>

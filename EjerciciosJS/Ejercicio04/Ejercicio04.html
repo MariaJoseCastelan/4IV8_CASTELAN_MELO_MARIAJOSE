@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ejercicio 4 - Calificación Final</title>
+  <link rel="stylesheet" href="style04.css" />
+</head>
+<body>
+
+  <div class="contenedor">
+
+    <h1>Calificación Final</h1>
+    <h2>Materia: Algoritmos</h2>
+
+    <p class="descripcion">
+      Ingresa tus calificaciones para conocer tu calificación final.
+      Todos los campos son obligatorios y deben estar entre <strong>0</strong> y <strong>10</strong>.
+    </p>
+
+    
+    <div class="seccion">
+      <h3>Calificaciones Parciales (55%)</h3>
+
+      <div class="campo">
+        <label for="parcial1">Parcial 1:</label>
+        <input type="text" id="parcial1" placeholder="Ej: 8.5" maxlength="5" />
+        <span class="error" id="error-parcial1"></span>
+      </div>
+
+      <div class="campo">
+        <label for="parcial2">Parcial 2:</label>
+        <input type="text" id="parcial2" placeholder="Ej: 7.0" maxlength="5" />
+        <span class="error" id="error-parcial2"></span>
+      </div>
+
+      <div class="campo">
+        <label for="parcial3">Parcial 3:</label>
+        <input type="text" id="parcial3" placeholder="Ej: 9.0" maxlength="5" />
+        <span class="error" id="error-parcial3"></span>
+      </div>
+    </div>
+
+    
+    <div class="seccion">
+      <h3>Examen Final (30%)</h3>
+
+      <div class="campo">
+        <label for="examenFinal">Calificación del Examen Final:</label>
+        <input type="text" id="examenFinal" placeholder="Ej: 8.0" maxlength="5" />
+        <span class="error" id="error-examenFinal"></span>
+      </div>
+    </div>
+
+   
+    <div class="seccion">
+      <h3>Trabajo Final (15%)</h3>
+
+      <div class="campo">
+        <label for="trabajoFinal">Calificación del Trabajo Final:</label>
+        <input type="text" id="trabajoFinal" placeholder="Ej: 9.5" maxlength="5" />
+        <span class="error" id="error-trabajoFinal"></span>
+      </div>
+    </div>
+
+    
+    <div class="botones">
+      <button onclick="calcular()">Calcular</button>
+      <button class="btn-limpiar" onclick="limpiar()">Limpiar</button>
+    </div>
+
+    
+    <div class="resultado" id="resultado" style="display: none;">
+      <h3>Resultado</h3>
+      <p id="texto-resultado"></p>
+      <p class="nota" id="texto-nota"></p>
+    </div>
+
+  </div>
+
+  <script src="validaciones04.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ejercicio 02 - Vendedor</title>
+  <link rel="stylesheet" href="style02.css" />
+</head>
+<body>
+
+  <div class="tarjeta">
+
+    <div class="encabezado">
+      <h1>Comisiones del Vendedor</h1>
+      <p>Calcula el total a recibir en el mes incluyendo comisiones</p>
+    </div>
+
+    <div class="grupo-campo">
+      <label for="sueldo">Sueldo base ($315 - $50,000)</label>
+      <input type="text" id="sueldo" placeholder="Ejemplo: 5000" maxlength="10" />
+      <span class="mensaje-error" id="error-sueldo"></span>
+    </div>
+
+    <div class="grupo-campo">
+      <label for="venta1">Venta 1 ($1 - $50,000)</label>
+      <input type="text" id="venta1" placeholder="Ejemplo: 3000" maxlength="10" />
+      <span class="mensaje-error" id="error-venta1"></span>
+    </div>
+
+    <div class="grupo-campo">
+      <label for="venta2">Venta 2 ($1 - $50,000)</label>
+      <input type="text" id="venta2" placeholder="Ejemplo: 4500" maxlength="10" />
+      <span class="mensaje-error" id="error-venta2"></span>
+    </div>
+
+    <div class="grupo-campo">
+      <label for="venta3">Venta 3 ($1 - $50,000)</label>
+      <input type="text" id="venta3" placeholder="Ejemplo: 2000" maxlength="10" />
+      <span class="mensaje-error" id="error-venta3"></span>
+    </div>
+
+    <button class="btn-calcular" onclick="calcular()">Calcular</button>
+    <button class="btn-limpiar" onclick="limpiar()">Limpiar</button>
+
+    <div class="resultado" id="resultado" style="display: none;">
+      <h2>Resultados</h2>
+
+      <div class="fila-resultado">
+        <span class="etiqueta">Sueldo base</span>
+        <span class="valor" id="res-sueldo"></span>
+      </div>
+
+      <div class="fila-resultado">
+        <span class="etiqueta">Comisión venta 1</span>
+        <span class="valor" id="res-comision1"></span>
+      </div>
+
+      <div class="fila-resultado">
+        <span class="etiqueta">Comisión venta 2</span>
+        <span class="valor" id="res-comision2"></span>
+      </div>
+
+      <div class="fila-resultado">
+        <span class="etiqueta">Comisión venta 3</span>
+        <span class="valor" id="res-comision3"></span>
+      </div>
+
+      <div class="fila-resultado">
+        <span class="etiqueta">Total comisiones</span>
+        <span class="valor" id="res-total-comisiones"></span>
+      </div>
+
+      <div class="fila-resultado total">
+        <span class="etiqueta">Total del mes</span>
+        <span class="valor" id="res-total"></span>
+      </div>
+    </div>
+
+    <p class="nota">* La comisión es del 10% por cada venta realizada.</p>
+
+  </div>
+
+  <script src="validaciones02.js"></script>
+
+</body>
+</html>

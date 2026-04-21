@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ejercicio 5 - Porcentaje de Alumnos</title>
+  <link rel="stylesheet" href="style05.css" />
+</head>
+<body>
+
+  <div class="contenedor">
+
+    <h1>Porcentaje de Alumnos</h1>
+    <h2>Por género en el grupo</h2>
+
+    <p class="descripcion">
+      Ingresa la cantidad de hombres y mujeres del grupo.
+      Solo se permiten números enteros mayores o iguales a <strong>0</strong>,
+      y el total de alumnos debe ser mayor a <strong>0</strong>.
+    </p>
+
+    <div class="seccion">
+      <h3>Datos del Grupo</h3>
+
+      <div class="campo">
+        <label for="hombres">Número de Hombres:</label>
+        <input type="text" id="hombres" placeholder="Ej: 15" maxlength="5" />
+        <span class="error" id="error-hombres"></span>
+      </div>
+
+      <div class="campo">
+        <label for="mujeres">Número de Mujeres:</label>
+        <input type="text" id="mujeres" placeholder="Ej: 18" maxlength="5" />
+        <span class="error" id="error-mujeres"></span>
+      </div>
+
+      <span class="error" id="error-total"></span>
+    </div>
+
+    <div class="botones">
+      <button onclick="calcular()">Calcular</button>
+      <button class="btn-limpiar" onclick="limpiar()">Limpiar</button>
+    </div>
+
+    <div class="resultado" id="resultado" style="display: none;">
+      <h3>Resultado</h3>
+      <p id="texto-total"></p>
+      <div class="fila-resultado">
+        <span class="etiqueta hombres-color">Hombres</span>
+        <span id="texto-hombres"></span>
+      </div>
+      <div class="fila-resultado">
+        <span class="etiqueta mujeres-color">Mujeres</span>
+        <span id="texto-mujeres"></span>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="validaciones05.js"></script>
+
+</body>
+</html>

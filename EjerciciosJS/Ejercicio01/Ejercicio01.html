@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Problema 1 - Inversión Bancaria</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="tarjeta">
+
+    <div class="encabezado">
+      <h1>Inversión Bancaria</h1>
+      <p>Calcula tus ganancias con una tasa del 2% mensual</p>
+    </div>
+
+    <div class="grupo-campo">
+      <label for="capital">Capital a invertir ($1 - $100,000)</label>
+      <input type="text" id="capital" placeholder="Ejemplo: 5000" maxlength="15" />
+      <span class="mensaje-error" id="error-capital"></span>
+    </div>
+
+    <button class="btn-calcular" onclick="calcular()">Calcular ganancia</button>
+    <button class="btn-limpiar" onclick="limpiar()">Limpiar</button>
+
+    <div class="resultado" id="resultado" style="display: none;">
+      <h2> Resultados</h2>
+
+      <div class="fila-resultado">
+        <span class="etiqueta">Capital invertido</span>
+        <span class="valor" id="res-capital"></span>
+      </div>
+
+      <div class="fila-resultado">
+        <span class="etiqueta">Tasa mensual</span>
+        <span class="valor">2%</span>
+      </div>
+
+      <div class="fila-resultado">
+        <span class="etiqueta">Ganancia del mes</span>
+        <span class="valor" id="res-ganancia"></span>
+      </div>
+
+      <div class="fila-resultado total">
+        <span class="etiqueta"> Total al final del mes</span>
+        <span class="valor" id="res-total"></span>
+      </div>
+    </div>
+
+    <p class="nota">* La tasa de interés aplicada es del 2% mensual fija.</p>
+
+  </div>
+
+  <script src="validaciones01.js"></script>
+
+</body>
+</html>
