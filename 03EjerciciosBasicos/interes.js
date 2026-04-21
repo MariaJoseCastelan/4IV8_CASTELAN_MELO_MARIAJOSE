@@ -15,4 +15,9 @@ function validarn(e) {
         var total = subtotal + interes; 
 
         document.getElementById('sueldoi').value = "$" + total;
-       } 
+       }
+
+       function borrar() {
+        document.getElementById('sueldoi').value = "";
+        document.getElementById('cantidadi').value = "";
+       }
