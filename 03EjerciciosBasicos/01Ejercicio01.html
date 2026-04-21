@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primer Ejercicio de los 10d</title>
+</head>
+<body>
+    <div class="Ejercicio1">
+        <form method="POST" id="formularioejer1" name="formularioejerc1" action="">
+            <label for="">
+                Formulario para calcular una inversion al x% de interes anual.
+            </label>
+            <div class="container-table">
+                <table class="table">
+                    <tr>
+                        <td>
+                            Introduce la cantidad que deseas invertir por todo un año:
+                        </td>
+                        <td>
+                            <input type="text" name="cantidad" id="cantidadi" onkeypress="return validarn(event);">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Introduce el porcentaje de interés anual:
+                        </td>
+                        <td>
+                            <input type="text" name="interes" id="interes1" onkeypress="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+
+                        </td>
+                        <td>
+                            <input type="button" value="Calcular interes" name="enviar" onclick="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Su saldo es:</td>
+                        <td>
+                            <input type="text" name="sueldo1" id="sueldo1" readonly="readonly">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="button" value="Borrar Datos" name="borrar" onclick="">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </form>
+    </div>
+    <script src="./interes.js"></script>
+    </body>
+</html>
