@@ -1,1 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ejercicio 6 - Calculadora de Edad</title>
+  <link rel="stylesheet" href="style06.css" />
+</head>
+<body>
+
+  <div class="contenedor">
+
+    <h1>Calculadora de Edad</h1>
+    <h2>Ingresa tu fecha de nacimiento</h2>
+
+    <p class="descripcion">
+      Ingresa el día, mes y año de nacimiento para calcular tu edad.
+      La fecha no puede ser futura ni anterior al año <strong>1900</strong>.
+    </p>
+
+    <div class="seccion">
+      <h3>Fecha de Nacimiento</h3>
+
+      <div class="fila-fecha">
+
+        <div class="campo">
+          <label for="dia">Día:</label>
+          <input type="text" id="dia" placeholder="Ej: 15" maxlength="2" />
+          <span class="error" id="error-dia"></span>
+        </div>
+
+        <div class="campo">
+          <label for="mes">Mes:</label>
+          <input type="text" id="mes" placeholder="Ej: 8" maxlength="2" />
+          <span class="error" id="error-mes"></span>
+        </div>
+
+        <div class="campo">
+          <label for="anio">Año:</label>
+          <input type="text" id="anio" placeholder="Ej: 2000" maxlength="4" />
+          <span class="error" id="error-anio"></span>
+        </div>
+
+      </div>
+
+      <span class="error" id="error-fecha"></span>
+    </div>
+
+    <div class="botones">
+      <button onclick="calcular()">Calcular</button>
+      <button class="btn-limpiar" onclick="limpiar()">Limpiar</button>
+    </div>
+
+    <div class="resultado" id="resultado" style="display: none;">
+      <h3>Resultado</h3>
+      <p id="texto-edad"></p>
+    </div>
+
+  </div>
+
+  <script src="validaciones06.js"></script>
+
+</body>
+</html>
 
