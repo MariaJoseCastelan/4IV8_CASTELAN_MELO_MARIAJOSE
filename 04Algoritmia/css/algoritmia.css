@@ -1,0 +1,131 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #DDFCAD;
+    font-family: Georgia, serif;
+    color: #646165;
+}
+
+.container {
+    max-width: 860px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+/* Cada tarjeta de problema */
+.problema-container {
+    background-color: #82846D;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Título "Problema 1", "Problema 2"... */
+.problema-titulo {
+    color: #DDFCAD;
+    font-size: 1.6rem;
+    margin-bottom: 0.6rem;
+    border-bottom: 2px solid #95A472;
+    padding-bottom: 0.4rem;
+}
+
+/* Descripción del problema */
+.problema-container h3 {
+    color: #C8E087;
+    font-size: 0.95rem;
+    font-weight: normal;
+    line-height: 1.5;
+    margin-bottom: 1.2rem;
+}
+
+/* Área de contenido (inputs, botón, output) */
+.problema-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Inputs de texto */
+.problema-input {
+    padding: 0.5rem 0.8rem;
+    border: 2px solid #95A472;
+    border-radius: 6px;
+    background-color: #DDFCAD;
+    color: #646165;
+    font-size: 0.95rem;
+    width: 100%;
+}
+
+.problema-input:focus {
+    outline: none;
+    border-color: #C8E087;
+}
+
+/* Botones */
+.problema-button {
+    padding: 0.5rem 1.2rem;
+    background-color: #95A472;
+    color: #DDFCAD;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-family: Georgia, serif;
+    width: fit-content;
+}
+
+.problema-button:hover {
+    background-color: #646165;
+}
+
+/* Caja de resultado */
+.problema-output {
+    background-color: #646165;
+    color: #DDFCAD;
+    padding: 0.8rem 1rem;
+    border-radius: 6px;
+    margin-top: 0.5rem;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 0.95rem;
+    min-height: 2.5rem;
+}
+
+/* Tablas del problema 2 */
+.tablas {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+}
+
+table {
+    border-collapse: collapse;
+    width: 45%;
+    min-width: 140px;
+}
+
+thead th {
+    background-color: #646165;
+    color: #DDFCAD;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+tbody td {
+    color: #DDFCAD;
+    padding: 0.4rem 0.6rem;
+    text-align: center;
+}
+
+
+tbody .problema-input {
+    width: 80px;
+    text-align: center;
+    padding: 0.3rem;
+}

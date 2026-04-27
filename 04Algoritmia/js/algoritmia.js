@@ -1,4 +1,24 @@
 function problema1(){
+    var input  = document.querySelector("#p1-input").value;
+    var output = document.querySelector("#p1-output");
+
+    
+    if (input.trim() === "") {
+        output.textContent = "El campo está vacío. Ingresa al menos una palabra.";
+        return;
+    }
+
+    var regex = /^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ]{2,}(\s+[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ]{2,})*$/;
+    if (!regex.test(input.trim())) {
+        output.textContent = "Solo se permiten letras (mínimo 2 por palabra), separadas por espacios.No se aceptan números, comas ni caracteres especiales. Ejemplo: hola mundo bonito";
+        return;
+    }
+
+    var palabras = input.trim().split(/\s+/);
+
+    var invertidas = palabras.reverse();
+
+    output.textContent = "Resultado: " + invertidas.join(" ");
 
 }
 
@@ -40,4 +60,47 @@ function problema2(){
 
 function problema3(){
 
+     var input  = document.querySelector("#p3-input").value;
+    var output = document.querySelector("#p3-output");
+
+   
+    if (input.trim() === "") {
+        output.textContent = "El campo está vacío. Ingresa al menos una palabra.";
+        return;
+    }
+
+   
+    var regex = /^[A-Z]{2,}(,[A-Z]{2,})*$/;
+    if (!regex.test(input)) {
+        output.textContent = "Solo se aceptan letras A-Z en mayúsculas (mínimo 2 por palabra), separadas por comas, sin espacios ni números.Ejemplo: CASA,PERRO,SOL";
+        return;
+    }
+
+    var palabras = input.split(",");
+
+    var maxUnicos   = 0;
+    var palabraGanadora = "";
+
+    for (var i = 0; i < palabras.length; i++) {
+        var palabra = palabras[i];
+        var letrasUnicas = [];
+
+        for (var j = 0; j < palabra.length; j++) {
+            var letra = palabra[j];
+            if (letrasUnicas.indexOf(letra) === -1) {
+                letrasUnicas.push(letra);
+            }
+        }
+
+        if (letrasUnicas.length > maxUnicos) {
+            maxUnicos       = letrasUnicas.length;
+            palabraGanadora = palabra;
+        }
+    }
+
+    output.textContent =
+        'La palabra con más caracteres únicos es: "' + palabraGanadora + '" ' +
+        "Cantidad de caracteres únicos: " + maxUnicos;
 }
+
+
