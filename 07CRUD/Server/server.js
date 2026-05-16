@@ -13,7 +13,7 @@ const pool = mysql.createPool({
     queueLimit: 0
 }).promise();
 
-app.use(express.static('public'));  // reemplaza MIME_TYPES y servirArchivoEstatico 
+app.use(express.static('../public')); // Reemplaza mimetypes y archivos estáticos
 app.use(express.json());            // reemplaza leerBody
 
 
