@@ -6,15 +6,15 @@ const PORT = process.env.PORT || 3000;
 const pool = mysql.createPool({
     host: 'localhost',
     user: 'root',
-    password: 'password',
+    password: 'Rockoteamodemasiado1107@',
     database: 'pnt_practica1',
     waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0
 }).promise();
 
-app.use(express.static('public'));  // ← reemplaza MIME_TYPES + servirArchivoEstatico
-app.use(express.json());            // ← reemplaza leerBody
+app.use(express.static('public'));  // reemplaza MIME_TYPES y servirArchivoEstatico 
+app.use(express.json());            // reemplaza leerBody
 
 
 
