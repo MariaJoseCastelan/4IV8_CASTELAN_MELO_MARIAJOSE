@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brawl Stars - Sistema de Gestión</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+    <div class="bs-wrap">
+        <header class="bs-header">
+            <h1>Catálogo de Brawl Stars</h1>
+            <p>Gestión de Brawlers, Modos, Jugadores y Partidas</p>
+            <nav class="tabs">
+            <button class="tab active" onclick="cambiarSeccion('brawlers')">Brawlers</button>
+            <button class="tab" onclick="cambiarSeccion('modos_juego')">Modos de Juego</button>
+            <button class="tab" onclick="cambiarSeccion('jugadores')">Jugadores</button>
+            <button class="tab" onclick="cambiarSeccion('partidas')">Partidas</button>
+        </nav>
+    </header>
+
+    <main class="bs-main">
+
+        <section class="api-bar">
+            <h3>Estado de la API</h3>
+            <div class="api-row">
+                <span id="api-metodo" class="badge badge-get">-</span>
+                <span id="api-url" class="api-url">-</span>
+                <span id="api-codigo" class="badge badge-neutral">-</span>
+            </div>
+        </section>
+
+        <div id="seccion-brawlers" class="seccion">
+
+            <section class="formulario-section">
+                <h2 id="form-titulo-brawler">Agregar Brawler</h2>
+                <form id="form-brawler" novalidate>
+                    <input type="hidden" id="brawler-id">
+                    <div class="campos-grid">
+                        <div class="campo">
+                            <label for="brawler-nombre">Nombre:</label>
+                            <input type="text" id="brawler-nombre" placeholder="Ej: Shelly, Colt..." maxlength="100" required>
+                            <span class="error" id="error-brawler-nombre"></span>
+                        </div>
+                        <div class="campo">
+                            <label for="brawler-clase">Clase:</label>
+                            <input type="text" id="brawler-clase" placeholder="Ej: Daño, Tanque, Apoyo..." maxlength="50" required>
+                            <span class="error" id="error-brawler-clase"></span>
+                        </div>
+                        <div class="campo">
+                            <label for="brawler-rareza">Rareza:</label>
+                            <input type="text" id="brawler-rareza" placeholder="Ej: Especial, Mítico, Legendario..." maxlength="50" required>
+                            <span class="error" id="error-brawler-rareza"></span>
+                        </div>
+                    </div>
+                    <div class="botones">
+                        <button type="submit" id="btn-guardar-brawler" class="btn-primary">Guardar</button>
+                        <button type="button" id="btn-cancelar-brawler" class="btn-secundario" style="display:none;">Cancelar</button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="tabla-section">
+                <h2>Brawlers Registrados <span id="contador-brawlers" class="badge badge-neutral"></span></h2>
+                <p id="carga-brawlers">Cargando...</p>
+                <table id="tabla-brawlers" style="display:none;">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Clase</th>
+                            <th>Rareza</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody-brawlers"></tbody>
+                </table>
+            </section>
+        </div>
+
+        <div id="seccion-modos_juego" class="seccion" style="display:none;">
+
+            <section class="formulario-section">
+                <h2 id="form-titulo-modo">Agregar Modo de Juego</h2>
+                <form id="form-modo" novalidate>
+                    <input type="hidden" id="modo-id">
+                    <div class="campos-grid">
+                        <div class="campo">
+                            <label for="modo-nombre">Nombre del Modo:</label>
+                            <input type="text" id="modo-nombre" placeholder="Ej: Atrapagemas, Supervivencia..." maxlength="100" required>
+                            <span class="error" id="error-modo-nombre"></span>
+                        </div>
+                        <div class="campo">
+                            <label for="modo-mapa">Mapa:</label>
+                            <input type="text" id="modo-mapa" placeholder="Ej: Mina de Gemas, Valle Rocoso..." maxlength="100" required>
+                            <span class="error" id="error-modo-mapa"></span>
+                        </div>
+                    </div>
+                    <div class="botones">
+                        <button type="submit" id="btn-guardar-modo" class="btn-primary">Guardar</button>
+                        <button type="button" id="btn-cancelar-modo" class="btn-secundario" style="display:none;">Cancelar</button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="tabla-section">
+                <h2>Modos Disponibles <span id="contador-modos" class="badge badge-neutral"></span></h2>
+                <p id="carga-modos">Cargando...</p>
+                <table id="tabla-modos" style="display:none;">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Modo de Juego</th>
+                            <th>Mapa</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody-modos"></tbody>
+                </table>
+            </section>
+        </div>
+
+        <div id="seccion-jugadores" class="seccion" style="display:none;">
+
+            <section class="formulario-section">
+                <h2 id="form-titulo-jugador">Agregar Jugador</h2>
+                <form id="form-jugador" novalidate>
+                    <input type="hidden" id="jugador-id">
+                    <div class="campos-grid">
+                        <div class="campo">
+                            <label for="jugador-nombre">Nombre de Usuario (Tag):</label>
+                            <input type="text" id="jugador-nombre" placeholder="Ej: ProGamer99" maxlength="100" required>
+                            <span class="error" id="error-jugador-nombre"></span>
+                        </div>
+                        <div class="campo">
+                            <label for="jugador-trofeos">Rango de Trofeos:</label>
+                            <input type="number" id="jugador-trofeos" placeholder="Ej: 5000" min="0" required>
+                            <span class="error" id="error-jugador-trofeos"></span>
+                        </div>
+                    </div>
+                    <div class="botones">
+                        <button type="submit" id="btn-guardar-jugador" class="btn-primary">Guardar</button>
+                        <button type="button" id="btn-cancelar-jugador" class="btn-secundario" style="display:none;">Cancelar</button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="tabla-section">
+                <h2>Lista de Jugadores <span id="contador-jugadores" class="badge badge-neutral"></span></h2>
+                <p id="carga-jugadores">Cargando...</p>
+                <table id="tabla-jugadores" style="display:none;">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Jugador</th>
+                            <th>Trofeos</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody-jugadores"></tbody>
+                </table>
+            </section>
+        </div>
+
+        <div id="seccion-partidas" class="seccion" style="display:none;">
+
+            <section class="formulario-section">
+                <h2>Registrar Partida</h2>
+                <form id="form-partida" novalidate>
+                    <div class="campos-grid campos-grid-3">
+                        <div class="campo">
+                            <label for="partida-jugador">Jugador:</label>
+                            <select id="partida-jugador" required>
+                                <option value="">-- Seleccionar Jugador --</option>
+                            </select>
+                            <span class="error" id="error-partida-jugador"></span>
+                        </div>
+                        <div class="campo">
+                            <label for="partida-brawler">Brawler Usado:</label>
+                            <select id="partida-brawler" required>
+                                <option value="">-- Seleccionar Brawler --</option>
+                            </select>
+                            <span class="error" id="error-partida-brawler"></span>
+                        </div>
+                        <div class="campo">
+                            <label for="partida-modo">Modo de Juego:</label>
+                            <select id="partida-modo" required>
+                                <option value="">-- Seleccionar Modo --</option>
+                            </select>
+                            <span class="error" id="error-partida-modo"></span>
+                        </div>
+                        <div class="campo">
+                            <label for="partida-resultado">Resultado:</label>
+                            <select id="partida-resultado" required>
+                                <option value="">-- Seleccionar --</option>
+                                <option value="Victoria">🏆 Victoria</option>
+                                <option value="Derrota">☠️ Derrota</option>
+                                <option value="Empate">🤝 Empate</option>
+                            </select>
+                            <span class="error" id="error-partida-resultado"></span>
+                        </div>
+                    </div>
+                    <div class="botones">
+                        <button type="submit" id="btn-registrar-partida" class="btn-primary">Guardar Partida</button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="tabla-section">
+                <h2>Historial de Partidas <span id="contador-partidas" class="badge badge-neutral"></span></h2>
+                <p id="carga-partidas">Cargando...</p>
+                <table id="tabla-partidas" style="display:none;">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Jugador</th>
+                            <th>Brawler</th>
+                            <th>Modo</th>
+                            <th>Resultado</th>
+                            <th>Fecha</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody-partidas"></tbody>
+                </table>
+            </section>
+        </div>
+
+        <div id="notificacion" class="notificacion" style="display:none;"></div>
+
+    </main>
+    </div>
+
+    <footer>
+        <p>Proyecto Brawl Stars: Express + CORS + Relaciones MySQL</p>
+    </footer>
+
+    <script src="./js/app.js"></script>
+</body>
+</html>

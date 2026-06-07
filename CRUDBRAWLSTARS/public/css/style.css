@@ -1,0 +1,104 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@600;700;800;900&display=swap');
+
+.bs-wrap { font-family: 'Nunito', sans-serif; background: #EEF2FF; border-radius: 12px; overflow: hidden; max-width: 1200px; margin: 20px auto; box-shadow: 0 20px 40px rgba(15,23,42,0.12); }
+
+.bs-header {
+    background: linear-gradient(140deg, #060E22 0%, #0B1F60 55%, #1B4FD8 100%);
+    padding: 18px 20px 0; text-align: center; position: relative;
+}
+.bs-header::after {
+    content:''; position:absolute; bottom:0; left:0; right:0; height:3px;
+    background: linear-gradient(90deg, transparent, #FFD000 30%, #FF8C00 50%, #FFD000 70%, transparent);
+}
+.bs-header h1 {
+    font-family: 'Bangers', Impact, sans-serif;
+    font-size: 28px; letter-spacing: 3px; margin-bottom: 4px;
+    background: linear-gradient(180deg, #fff 20%, #FFD000 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    filter: drop-shadow(2px 2px 0 rgba(0,0,0,0.5));
+}
+.bs-header p { font-size: 11px; color: rgba(255,255,255,0.5); font-weight: 700; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 14px; }
+
+.tabs { display: flex; justify-content: center; gap: 4px; padding: 0 10px; }
+.tab {
+    padding: 8px 18px; background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.5);
+    border: none; font-family: 'Nunito', sans-serif; font-size: 13px; font-weight: 800;
+    border-radius: 10px 10px 0 0; cursor: pointer;
+}
+.tab.active { background: #EEF2FF; color: #1B4FD8; position: relative; }
+.tab.active::after {
+    content:''; position:absolute; bottom:0; left:50%; transform:translateX(-50%);
+    width:28px; height:3px; background:#FFD000; border-radius:3px 3px 0 0;
+}
+
+.bs-main { padding: 16px; display: flex; flex-direction: column; gap: 14px; }
+
+.api-bar {
+    background: linear-gradient(135deg, #060E22, #0B1F60);
+    border-radius: 10px; padding: 10px 16px;
+}
+.api-label { font-size: 9px; font-weight: 800; color: rgba(255,255,255,0.35); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 6px; }
+.api-row { display: flex; align-items: center; gap: 10px; font-family: monospace; font-size: 12px; }
+.badge { display:inline-block; padding: 2px 8px; border-radius:5px; font-size:9px; font-weight:900; text-transform:uppercase; font-family:'Nunito',sans-serif; }
+.badge-get { background:#DBEAFE; color:#1D4ED8; }
+.badge-success { background:#DCFCE7; color:#15803D; }
+.api-url { color: rgba(255,255,255,0.5); flex:1; }
+.badge-cnt { background: #EEF2FF; color: #4B6DA8; border: 1px solid #C7D7FF; }
+
+.badge-error { background: #FEE2E2; color: #991B1B; }
+.badge-neutral { background: #E5E7EB; color: #374151; }
+
+.btn-secundario {
+    margin-top: 12px; padding: 9px 20px;
+    background: #F8FAFF; color: #0F172A; border: 1px solid #CBD5E1;
+    border-radius: 10px; cursor: pointer;
+}
+
+.card, .card2 {
+    background: white; border-radius: 12px; padding: 18px;
+    border: 1px solid #C7D7FF;
+    box-shadow: 0 0 0 1px rgba(27,79,216,0.08), 0 4px 20px rgba(27,79,216,0.1);
+    position: relative; overflow: hidden;
+}
+.card::before {
+    content:''; position:absolute; top:0; left:0; right:0; height:3px;
+    background: linear-gradient(90deg, #1B4FD8, #FFD000);
+}
+.card h2, .card2 h2 { font-size: 15px; font-weight: 900; color: #0F1829; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+.campo label { display: block; font-size: 10px; font-weight: 800; color: #4B6DA8; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 5px; }
+.campo input {
+    width: 100%; padding: 8px 12px; border: 2px solid #C7D7FF; border-radius: 10px;
+    font-family: 'Nunito', sans-serif; font-size: 13px; font-weight: 600; color: #0F1829; background: #F8FAFF;
+    box-sizing: border-box;
+}
+.campo input:focus { outline: none; border-color: #1B4FD8; box-shadow: 0 0 0 4px rgba(27,79,216,0.12); }
+.btn-primary {
+    margin-top: 12px; padding: 9px 20px;
+    background: linear-gradient(135deg, #1B4FD8, #3B82F6);
+    color: white; border: none; border-radius: 10px;
+    font-family: 'Nunito', sans-serif; font-size: 13px; font-weight: 800;
+    cursor: pointer; box-shadow: 0 4px 14px rgba(27,79,216,0.35);
+}
+
+table { width: 100%; border-collapse: collapse; }
+thead { background: linear-gradient(135deg, #060E22, #0B1F60); border-radius: 8px; }
+th { padding: 9px 12px; text-align: left; font-size: 9px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: rgba(255,255,255,0.6); }
+td { padding: 9px 12px; border-bottom: 1px solid #C7D7FF; font-size: 13px; font-weight: 600; color: #0F1829; }
+tr:last-child td { border-bottom: none; }
+tbody tr:hover { background: #EEF2FF; }
+
+.btn-edit { background: linear-gradient(135deg, #1B4FD8, #3B82F6); color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 11px; font-weight: 800; cursor: pointer; margin-right: 4px; box-shadow: 0 2px 8px rgba(27,79,216,0.25); }
+.btn-del { background: linear-gradient(135deg, #EF4444, #F87171); color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 11px; font-weight: 800; cursor: pointer; box-shadow: 0 2px 8px rgba(239,68,68,0.25); }
+.btn-ver { background: linear-gradient(135deg, #FFD000, #FF8C00); color: #0F1829; border: none; border-radius: 6px; padding: 4px 10px; font-size: 11px; font-weight: 800; cursor: pointer; margin-right: 4px; box-shadow: 0 2px 8px rgba(255,208,0,0.3); }
+
+.notificacion {
+    background: linear-gradient(135deg, #16A34A, #22C55E);
+    border-left: 4px solid #86EFAC;
+    color: white; font-weight: 800; font-size: 12px;
+    padding: 10px 16px; border-radius: 10px; font-family: 'Nunito', sans-serif;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18); margin-top: 4px;
+    display: none; /* Oculta por defecto para tu lógica de JS */
+}
