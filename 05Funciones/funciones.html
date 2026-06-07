@@ -7,24 +7,7 @@
     <script src="funciones.js" defer></script>
 </head>
 <body>
-    <h1>Ejemplo de Funciones en JavaScript</h1>
-    <p>Esta página usa el archivo <code>funciones.js</code> para mostrar ejemplos.</p>
-    <ul>
-        <li>sumarnumeros(2, 3) = <span id="resultado1">...</span></li>
-        <li>sumarDosNumeros(5, 3) = <span id="resultado2">...</span></li>
-    </ul>
     <p><a href="../index.html">Regresar a la página principal</a></p>
-    <script>
-        const resultado1 = document.getElementById('resultado1');
-        const resultado2 = document.getElementById('resultado2');
-
-        if (typeof sumarnumeros === 'function' && typeof sumarDosNumeros === 'function') {
-            resultado1.textContent = sumarnumeros(2, 3);
-            resultado2.textContent = sumarDosNumeros(5, 3);
-        } else {
-            resultado1.textContent = 'No se cargó la función correctamente.';
-            resultado2.textContent = 'No se cargó la función correctamente.';
-        }
-    </script>
+    
 </body>
 </html>
