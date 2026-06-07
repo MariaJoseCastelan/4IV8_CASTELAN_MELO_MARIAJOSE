@@ -1,0 +1,25 @@
+{
+  "name": "crudbrawlstars",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/MariaJoseCastelan/4IV8_CASTELAN_MELO_MARIAJOSE#readme",
+  "bugs": {
+    "url": "https://github.com/MariaJoseCastelan/4IV8_CASTELAN_MELO_MARIAJOSE/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MariaJoseCastelan/4IV8_CASTELAN_MELO_MARIAJOSE.git"
+  },
+  "license": "ISC",
+  "author": "Maria Jose Castelan",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "mysql2": "^3.22.5"
+  }
+}
