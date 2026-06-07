@@ -22,7 +22,11 @@ app.use((req, res, next) => {
 });
 
 //debemos definir las rutas para los archivos
-app.use(express.static(path.join(__dirname, '--', 'public')));
+app.use(express.static(path.join(__dirname, '..', 'public')));
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
+});
 
 //vamos a manejar las rutas de los recursos que se van a obtener por medio de las peticiones o respuestas
 //pueden existir rutas como app.use('/api/usuarios', usuariosRouter) todas las rutas son los metodos posibles para cada formulario
@@ -31,9 +35,9 @@ app.use(express.static(path.join(__dirname, '--', 'public')));
 //router.post('/') 
 //router.put('/:id') 
 
-const usuariosRouter = require('./routes/usuarios'); 
-const productosRouter = require('./routes/productos');
-const comprasRouter = require('./routes/compras'); 
+const usuariosRouter = require('./Routers/usuarios'); 
+const productosRouter = require('./Routers/productos');
+const comprasRouter = require('./Routers/compras'); 
 
 app.use('/api/usuarios', usuariosRouter); 
 app.use('/api/productos', productosRouter);
@@ -75,7 +79,7 @@ app.get('/api', (req, res) => {
 });
 
 //vamos a crear una funcion para las rutas inexistentes
-app.use('/api/*', (req, res) => {
+app.use('/api/', (req, res) => {
     res.status(404).json({
         status: 'error',
         message: 'Ruta no encontrada'

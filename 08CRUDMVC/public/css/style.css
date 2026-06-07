@@ -34,7 +34,8 @@ header h1 { font-size: 1.5rem; margin-bottom: 0.25rem; }
 header p { font-size: 0.875rem; opacity: 0.9; margin-bottom: 1rem; }
 
 /* NUEVO: Pestañas de navegación */
-.tabs {display: flex;
+.tabs {
+    display: flex;
     justify-content: center;
     gap: 0;
 }
@@ -65,7 +66,16 @@ header p { font-size: 0.875rem; opacity: 0.9; margin-bottom: 1rem; }
 main {
     max-width: 1000px;
     margin: 0 auto;
-    padding: 1.5rem 1rem;}
+    padding: 1.5rem 1rem;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    color: var(--color-texto-claro);
+    font-size: 0.8rem;
+    margin-top: 2rem;
+}
 
 /* ---- Secciones ---- */
 .formulario-section,
