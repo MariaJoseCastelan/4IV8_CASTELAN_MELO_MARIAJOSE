@@ -553,7 +553,7 @@ async function editarJugador(id) {
 }
 
 function confirmarEliminarJugador(id, nombre) {
-    if (confirm(`¿Eliminar a "${nombre}" y todas sus partidas?`)) {
+    if (confirm(`¿Eliminar a "${nombre}"? Si tiene partidas asociadas, la eliminación será rechazada.`)) {
         eliminarJugador(id);
     }
 }
@@ -567,7 +567,12 @@ async function eliminarJugador(id) {
         cargarSelectJugadores();
         cargarPartidas();
     } catch (error) {
-        mostrarNotificacion(error.message, 'error');
+        // Si la API devolvió un mensaje de referencia a partidas asociadas, mostrar texto más amigable
+        if (error.message && error.message.toLowerCase().includes('partidas asociadas')) {
+            mostrarNotificacion('No se pudo eliminar: existen partidas asociadas a este jugador', 'error');
+        } else {
+            mostrarNotificacion(error.message, 'error');
+        }
     }
 }
 
