@@ -31,6 +31,7 @@ const apiCodigo = document.getElementById('api-codigo');
 const notificacionDiv = document.getElementById('notificacion');
 
 // Fetch wrapper con logging (evolución de P2)
+//Fetch simplifica peticiones http
 async function fetchAPI(url, opciones = {}) {
     const method = opciones.method || 'GET';
 
